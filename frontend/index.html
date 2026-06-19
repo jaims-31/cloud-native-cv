@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon CV Cloud-Native</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f172a; color: #f8fafc; padding: 40px; text-align: center; }
+        .card { background: #1e293b; padding: 30px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); max-width: 500px; margin: 40px auto; border: 1px solid #334155; }
+        h1 { color: #38bdf8; margin-bottom: 5px; }
+        .title { color: #94a3b8; font-style: italic; margin-bottom: 20px; }
+        .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+        .skill-tag { background: #0369a1; color: #e0f2fe; padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1 id="name">Chargement...</h1>
+        <div id="title" class="title"></div>
+        <h3>Mes Compétences DevOps</h3>
+        <div id="skills" class="skills-container"></div>
+    </div>
+
+    <script>
+        
+        fetch('http://localhost:8000/api/cv')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('name').innerText = data.basics.name;
+                document.getElementById('title').innerText = data.basics.title;
+                
+                const skillsDiv = document.getElementById('skills');
+                data.skills.forEach(skill => {
+                    const tag = document.createElement('span');
+                    tag.className = 'skill-tag';
+                    tag.innerText = skill;
+                    skillsDiv.appendChild(tag);
+                });
+            })
+            .catch(err => {
+                document.getElementById('name').innerText = "Erreur de connexion à l'API";
+                console.error(err);
+            });
+    </script>
+</body>
+</html>
