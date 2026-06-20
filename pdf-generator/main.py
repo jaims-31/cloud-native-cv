@@ -52,8 +52,8 @@ def generate_pdf():
     for category, skills in data["skills"].items():
         pdf.set_font("helvetica", "B", 10)
         pdf.cell(0, 6, category + " :", new_x="LMARGIN", new_y="NEXT") 
-        pdf.set_font("helvetica", "", 10)
-        pdf.multi_cell(0, 6, skills)
+        pdf.multi_cell(0, 6, skills, new_x="LMARGIN", new_y="NEXT")
+        pdf.ln(2)
     pdf.ln(5)
 
     # --- PROJETS ---
