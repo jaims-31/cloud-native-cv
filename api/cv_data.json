@@ -1,8 +1,42 @@
 {
-     "basics": {
-       "name": "Franck Barry",
-       "title": "Cloud & DevOps Engineer",
-       "target_location": "Spain"
-     },
-     "skills": ["Linux", "Docker", "Git", "Bash"]
-   }
+  "basics": {
+    "name": "FRANCK BARRY",
+    "title": "Recherche d'un stage Administrateur Système & Cloud / DevOps",
+    "location": "Toulouse, France",
+    "phone": "+33 6 95 00 43 56",
+    "email": "franckbarry@outlook.es",
+    "summary": "Administrateur Système en formation, je développe de solides compétences (Linux, conteneurisation, automatisation). Rigoureux et autonome, je recherche un stage de novembre 2026 à avril 2027 pour contribuer à l'administration d'infrastructures IT, tout en explorant des pratiques DevOps et Cloud."
+  },
+  "skills": {
+    "Système & Scripting": "Linux; Bash / Shell; Python",
+    "Cloud Computing": "Azure; AWS",
+    "Conteneurisation": "Docker; Kubernetes; AKS",
+    "CI/CD & IaC": "Azure DevOps; GitHub Actions; GitLab CI; Terraform; Ansible; Bicep",
+    "Monitoring": "Prometheus & Grafana; Azure Monitor"
+  },
+  "projects": [
+    {
+      "title": "Portfolio Cloud-Native (Architecture Microservices)",
+      "description": "Création d'une application conteneurisée. Déploiement d'une API FastAPI (Backend), d'un Frontend Nginx et d'un Worker Python de génération de PDF, orchestrés via Docker Compose sur un réseau virtuel."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Pianiste, Professeur de piano - Freelance",
+      "period": "Janvier 2020 - Mars 2026",
+      "description": "Gestion d'activité indépendante, cours et pédagogie."
+    },
+    {
+      "role": "Sous-Officier - Armée de Terre",
+      "period": "2014 - 2019",
+      "description": "Encadrement et formation du personnel. Travail en équipe, coordination d'activités, respect des procédures et rigueur opérationnelle."
+    }
+  ],
+  "education": [
+    {
+      "title": "Titre professionnel Administrateur Système DevOps",
+      "school": "Ecole Cloud Microsoft by Simplon",
+      "year": "2026 - en cours"
+    }
+  ]
+}
