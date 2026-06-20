@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  # 1er Microservice : Notre Backend Python
+  api:
+    build: ./api
+    container_name: cv-api-compose
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  # 2ème Microservice : Notre Frontend Web Nginx
+  frontend:
+    build: ./frontend
+    container_name: cv-frontend-compose
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+    restart: unless-stopped
