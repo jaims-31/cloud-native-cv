@@ -30,3 +30,4 @@ jobs:
           context: ./pdf-generator
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/cv-pdf-generator:latest
+
