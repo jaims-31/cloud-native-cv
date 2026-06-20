@@ -31,12 +31,12 @@
                 document.getElementById('title').innerText = data.basics.title;
                 
                 const skillsDiv = document.getElementById('skills');
-                data.skills.forEach(skill => {
-                    const tag = document.createElement('span');
-                    tag.className = 'skill-tag';
-                    tag.innerText = skill;
-                    skillsDiv.appendChild(tag);
-                });
+                Object.entries(data.skills).forEach(([category, skillList]) => {
+            const tag = document.createElement('span');
+            tag.className = 'skill-tag';
+            tag.innerText = `${category} : ${skillList}`;
+            skillsDiv.appendChild(tag);
+        });
             })
             .catch(err => {
                 document.getElementById('name').innerText = "Erreur de connexion à l'API";
