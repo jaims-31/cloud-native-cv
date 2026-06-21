@@ -11,23 +11,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Login to Docker Hub
-        uses: docker/login-action@v2
+      - name: Login to Azure Container Registry
+        uses: azure/docker-login@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          login-server: cvregistryfranck.azurecr.io
+          username: cvregistryfranck
+          password: ${{ secrets.ACR_PASSWORD }}
 
-      - name: Build and push Frontend
-        uses: docker/build-push-action@v4
-        with:
-          context: ./frontend
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/cv-frontend:latest
-
-      - name: Build and push PDF Generator
-        uses: docker/build-push-action@v4
-        with:
-          context: ./pdf-generator
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/cv-pdf-generator:latest
+      # 2. Exemple pour Build et Push l'API (à adapter selon la structure de ton fichier)
+      - name: Build and push API
+        run: |
+          docker build -t cvregistryfranck.azurecr.io/api:${{ github.sha }} -t cvregistryfranck.azurecr.io/api:latest ./api
+          docker push cvregistryfranck.azurecr.io/api:${{ github.sha }}
+          docker push cvregistryfranck.azurecr.io/api:latest
 
