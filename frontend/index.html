@@ -24,7 +24,7 @@
 
     <script>
         
-        fetch('http://localhost:8000/api/cv')
+        fetch('http://20.31.11.46:5000/api/cv')
             .then(response => response.json())
             .then(data => {
                 document.getElementById('name').innerText = data.basics.name;
