@@ -26,6 +26,7 @@ kind: Service
 metadata:
   name: cv-api-service
 spec:
+  type: LoadBalancer
   selector:
     app: cv-api
   ports:
