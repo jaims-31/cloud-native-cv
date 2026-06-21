@@ -18,10 +18,22 @@ jobs:
           username: cvregistryfranck
           password: ${{ secrets.ACR_PASSWORD }}
 
-      # 2. Exemple pour Build et Push l'API (à adapter selon la structure de ton fichier)
       - name: Build and push API
         run: |
           docker build -t cvregistryfranck.azurecr.io/api:${{ github.sha }} -t cvregistryfranck.azurecr.io/api:latest ./api
           docker push cvregistryfranck.azurecr.io/api:${{ github.sha }}
           docker push cvregistryfranck.azurecr.io/api:latest
 
+      # 2. Build et Push du Frontend
+      - name: Build and push Frontend
+        run: |
+          docker build -t cvregistryfranck.azurecr.io/frontend:${{ github.sha }} -t cvregistryfranck.azurecr.io/frontend:latest ./frontend
+          docker push cvregistryfranck.azurecr.io/frontend:${{ github.sha }}
+          docker push cvregistryfranck.azurecr.io/frontend:latest
+
+      # 3. Build et Push du PDF Generator
+      - name: Build and push PDF Generator
+        run: |
+          docker build -t cvregistryfranck.azurecr.io/pdf-generator:${{ github.sha }} -t cvregistryfranck.azurecr.io/pdf-generator:latest ./pdf-generator
+          docker push cvregistryfranck.azurecr.io/pdf-generator:${{ github.sha }}
+          docker push cvregistryfranck.azurecr.io/pdf-generator:latest

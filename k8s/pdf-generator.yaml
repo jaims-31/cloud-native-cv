@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: pdf-generator
-        image: cvregistryfranck.azurecr.io/cv-pdf-generator:latest
+        image: cvregistryfranck.azurecr.io/pdf-generator:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5001

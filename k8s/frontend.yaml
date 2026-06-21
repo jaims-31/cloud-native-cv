@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: cvregistryfranck.azurecr.io/cv-frontend:latest
+        image: cvregistryfranck.azurecr.io/frontend:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
