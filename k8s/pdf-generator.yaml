@@ -17,9 +17,11 @@ spec:
       containers:
       - name: pdf-generator
         image: cvregistryfranck.azurecr.io/pdf-generator:latest
-        imagePullPolicy: Always
+        env:
+        - name: API_URL
+          value: "http://cv-api-service"
         ports:
-        - containerPort: 5001
+        - containerPort: 8001
 ---
 apiVersion: v1
 kind: Service
@@ -31,5 +33,5 @@ spec:
   ports:
     - protocol: TCP
       port: 5001
-      targetPort: 5001
+      targetPort: 8001
   type: ClusterIP
