@@ -33,3 +33,63 @@ The code lifecycle is fully automated using a GitHub Actions pipeline (`ci.yml`)
 2. **Push to ACR:** Secure authentication to Azure via repository deployment secrets, followed by pushing images with both the `latest` tag and the commit hash (SHA).
 3. **Rotation Strategy:** Managed Azure access keys with dual-entry rotation to ensure continuous security without service interruption.
 
+
+
+
+
+[ Code Commit ] ──> [ GitHub Actions ] ──> [ Azure Container Registry (ACR) ]
+│
+(Image Pull)
+▼
+[ Azure Kubernetes Service ]
+├── Ingress Nginx Controller
+├── Pod cv-frontend (Running)
+├── Pod cv-api      (Running)
+└── Pod cv-pdf      (Running)
+
+
+
+
+
+
+*Note: All application pods are configured to run resiliently and are self-managed by Kubernetes.*
+
+---
+
+## 🚀 Local Deployment & Key Commands
+
+### Prerequisites
+* Configured Azure CLI
+* `kubectl` connected to the AKS cluster
+
+### 1. Apply Kubernetes Manifests
+To deploy the entire stack (Deployments, Services, Ingress) to the cluster:
+```bash
+kubectl apply -f k8s/
+
+
+
+2. Check Cluster Health Status
+kubectl get pods -n default
+
+Expected status: All components (cv-frontend, cv-api, cv-pdf, ingress-nginx) must display a Running status.
+
+
+
+
+3. Retrieve Public Access IP
+kubectl get ingress
+
+Copy the public IP address from the ADDRESS column to browse the live application.
+
+
+
+
+🧠 Skills Validated Through This Project
+Microservices Architecture: Decoupling responsibilities and managing inter-service communication.
+
+Cloud Security: Advanced secret management (GitHub Secrets), network isolation, and access role management (AcrPull) between Azure services.
+
+Resilience & High Availability: Configuring Kubernetes deployment strategies, automatic container restarts upon failure, and traffic management via Ingress.
+
+Troubleshooting: Deep container log analysis (kubectl logs), investigating Pod lifecycles (ImagePullBackOff debugging), and workflow pipeline analysis.
