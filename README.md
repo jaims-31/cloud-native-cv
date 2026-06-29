@@ -71,7 +71,9 @@ kubectl apply -f k8s/
 
 
 2. Check Cluster Health Status
+```
 kubectl get pods -n default
+```
 
 Expected status: All components (cv-frontend, cv-api, cv-pdf, ingress-nginx) must display a Running status.
 
