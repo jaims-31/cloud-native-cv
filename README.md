@@ -71,7 +71,7 @@ kubectl apply -f k8s/
 
 
 2. Check Cluster Health Status
-```
+```bash
 kubectl get pods -n default
 ```
 
