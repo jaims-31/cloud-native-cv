@@ -25,6 +25,15 @@ The application is split into three distinct, autonomous, and scalable microserv
 
 ---
 
+### 🐳 Alternative: Fast Local Run (Docker Compose)
+If you want to test the application locally without deploying to Azure/Kubernetes, you can spin up the entire stack in seconds using Docker Compose:
+
+1. Clone the repository and navigate to the root directory.
+2. Run the following command:
+```bash
+docker-compose up --build
+```
+
 ## 🔀 Deployment Workflow (CI/CD Pipeline)
 
 The code lifecycle is fully automated using a GitHub Actions pipeline (`ci.yml`):
