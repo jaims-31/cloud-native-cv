@@ -66,7 +66,7 @@ The code lifecycle is fully automated using a GitHub Actions pipeline (`ci.yml`)
 To deploy the entire stack (Deployments, Services, Ingress) to the cluster:
 ```bash
 kubectl apply -f k8s/
-
+```
 
 
 
