@@ -81,7 +81,9 @@ Expected status: All components (cv-frontend, cv-api, cv-pdf, ingress-nginx) mus
 
 
 3. Retrieve Public Access IP
+```bash
 kubectl get ingress
+```
 
 Copy the public IP address from the ADDRESS column to browse the live application.
 
