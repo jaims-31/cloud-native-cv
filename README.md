@@ -33,6 +33,7 @@ If you want to test the application locally without deploying to Azure/Kubernete
 ```bash
 docker-compose up --build
 ```
+Open your browser and navigate to http://localhost:3000 (or the port configured for your frontend) to view the application.
 
 ## 🔀 Deployment Workflow (CI/CD Pipeline)
 
