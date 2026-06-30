@@ -66,6 +66,18 @@ The code lifecycle is fully automated using a GitHub Actions pipeline (`ci.yml`)
 
 ---
 
+## ⚙️ Configuration & Environment
+
+The proper functioning of the application depends on the configuration of environment variables.
+
+### 1. Local Configuration
+Before running the project locally, create a `.env` file at the root by copying the provided example:
+
+```bash
+cp .env.example .env
+
+---
+
 ## 🚀 Local Deployment & Key Commands
 
 ### Prerequisites
