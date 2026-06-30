@@ -10,9 +10,10 @@ app = FastAPI()
 @app.get("/api/pdf")
 def generate_pdf():
     # 1. Récupération des données API en interne
-    api_url = os.getenv("API_URL", "http://cv-api-service")
-    response = requests.get(f"{api_url}/api/cv")
+    api_url = os.getenv("API_URL", "http://api:8000")
+    response = requests.get(f"{api_url}/cv")
     data = response.json()
+    print("Données reçues de l'API :", data, flush=True)
 
     # 2. Configuration du PDF
     pdf = FPDF()

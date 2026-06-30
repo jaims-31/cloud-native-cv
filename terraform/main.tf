@@ -14,7 +14,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "cv_rg" {
   name     = "rg-cloud-native-cv"
-  location = "westeurope"
+  location = "spaincentral"
 }
 
 
