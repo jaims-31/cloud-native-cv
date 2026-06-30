@@ -75,6 +75,7 @@ Before running the project locally, create a `.env` file at the root by copying 
 
 ```bash
 cp .env.example .env
+```
 
 ---
 
