@@ -77,6 +77,20 @@ Before running the project locally, create a `.env` file at the root by copying 
 cp .env.example .env
 ```
 
+Variab                        leDescription                             Default  Value
+API_URL                       The API URL for the cv-pdf                http://api:8000
+                              service to fetch data.
+
+
+2. Cloud Deployment (Azure)
+When deploying to Azure (via App Service, Container Apps, or Kubernetes), these variables must be defined directly in the Azure Portal:
+
+Navigate to your specific Azure resource.
+
+Access Configuration (or Environment variables).
+
+Add API_URL with the public URL value of your deployed API service (e.g., https://api-cv.azurewebsites.net).
+
 ---
 
 ## 🚀 Local Deployment & Key Commands
