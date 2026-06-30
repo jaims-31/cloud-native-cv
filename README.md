@@ -77,9 +77,9 @@ Before running the project locally, create a `.env` file at the root by copying 
 cp .env.example .env
 ```
 
-Variale                       Description                             Default  Value
-API_URL                       The API URL for the cv-pdf              http://api:8000
-                              service to fetch data.
+| Variable | Description | Default Value |
+| --- | --- | --- |
+| API_URL | The API URL for the cv-pdf service to fetch data. | http://api:8000 |
 
 
 2. Cloud Deployment (Azure)
