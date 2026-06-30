@@ -77,8 +77,8 @@ Before running the project locally, create a `.env` file at the root by copying 
 cp .env.example .env
 ```
 
-Variab                        leDescription                             Default  Value
-API_URL                       The API URL for the cv-pdf                http://api:8000
+Variale                       Description                             Default  Value
+API_URL                       The API URL for the cv-pdf              http://api:8000
                               service to fetch data.
 
 
