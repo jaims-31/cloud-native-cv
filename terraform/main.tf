@@ -43,3 +43,10 @@ resource "azurerm_kubernetes_cluster" "cv_aks" {
     type = "SystemAssigned"
   }
 }
+
+# Donne au cluster AKS le droit de lire le registre ACR
+resource "azurerm_role_assignment" "aks_acr_pull" {
+  scope                = azurerm_container_registry.cv_acr.id
+  role_definition_name = "AcrPull"
+  principal_id         = azurerm_kubernetes_cluster.cv_aks.identity[0].principal_id
+}
